@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * TimeZone
  *
- * @ORM\Table()
+ * @ORM\Table(name="timezone")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\TimeZoneRepository")
  */
 class TimeZone

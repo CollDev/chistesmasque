@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Restriction
  *
- * @ORM\Table()
+ * @ORM\Table(name="restriction")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\RestrictionRepository")
  */
 class Restriction

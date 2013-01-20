@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Joke
  *
- * @ORM\Table()
+ * @ORM\Table(name="joke")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\JokeRepository")
  */
 class Joke
@@ -110,7 +110,7 @@ class Joke
      * @param string $part2
      * @return Joke
      */
-    public function setQue($part2)
+    public function setPart2($part2)
     {
         $this->part2 = $part2;
     
