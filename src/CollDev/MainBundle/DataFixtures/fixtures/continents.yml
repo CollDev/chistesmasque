@@ -1,0 +1,22 @@
+Continent:  
+    africa:
+        name: Africa
+        orden: 1
+    asia:
+        name: Asia
+        orden: 2
+    europa:
+        name: Europa
+        orden: 3
+    oceania:
+        name: Oceania
+        orden: 4
+    america_del_norte:
+        name: America del Norte
+        orden: 5
+    america_del_sur:
+        name: America del Sur
+        orden: 6
+    antartida:
+        name: Antartida
+        orden: 7

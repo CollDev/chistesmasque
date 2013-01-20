@@ -1,0 +1,1196 @@
+Country:
+  AF:
+    id: 1
+    name: Afghanistan
+    continente: asia
+    codigo: AF
+  AL:
+    id: 2
+    name: Albania
+    continente: europa
+    codigo: AL
+  DZ:
+    id: 3
+    name: Algeria
+    continente: africa
+    codigo: DZ
+  AS:
+    id: 4
+    name: American Samoa
+    continente: oceania
+    codigo: AS
+  AD:
+    id: 5
+    name: Andorra
+    continente: europa
+    codigo: AD
+  AO:
+    id: 6
+    name: Angola
+    continente: africa
+    codigo: AO
+  AI:
+    id: 7
+    name: Anguilla
+    continente: america_del_norte
+    codigo: AI
+  AQ:
+    id: 8
+    name: Antartida
+    continente: antartida
+    codigo: AQ
+  AG:
+    id: 9
+    name: Antigua and Barbuda
+    continente: america_del_norte
+    codigo: AG
+  AR:
+    id: 10
+    name: Argentina
+    continente: america_del_sur
+    codigo: AR
+  AM:
+    id: 11
+    name: Armenia
+    continente: asia
+    codigo: AM
+  AW:
+    id: 12
+    name: Aruba
+    continente: america_del_norte
+    codigo: AW
+  AU:
+    id: 13
+    name: Australia
+    continente: oceania
+    codigo: AU
+  AT:
+    id: 14
+    name: Austria
+    continente: europa
+    codigo: AT
+  AZ:
+    id: 15
+    name: Azerbaijan
+    continente: asia
+    codigo: AZ
+  BS:
+    id: 16
+    name: Bahamas
+    continente: america_del_norte
+    codigo: BS
+  BH:
+    id: 17
+    name: Bahrain
+    continente: asia
+    codigo: BH
+  BD:
+    id: 18
+    name: Bangladesh
+    continente: asia
+    codigo: BD
+  BB:
+    id: 19
+    name: Barbados
+    continente: america_del_norte
+    codigo: BB
+  BY:
+    id: 20
+    name: Belarus
+    continente: europa
+    codigo: BY
+  BE:
+    id: 21
+    name: Belgium
+    continente: europa
+    codigo: BE
+  BZ:
+    id: 22
+    name: Belize
+    continente: america_del_norte
+    codigo: BZ
+  BJ:
+    id: 23
+    name: Benin
+    continente: africa
+    codigo: BJ
+  BM:
+    id: 24
+    name: Bermuda
+    continente: america_del_norte
+    codigo: BM
+  BT:
+    id: 25
+    name: Bhutan
+    continente: asia
+    codigo: BT
+  BO:
+    id: 26
+    name: Bolivia
+    continente: america_del_sur
+    codigo: BO
+  BA:
+    id: 27
+    name: Bosnia and Herzegovina
+    continente: europa
+    codigo: BA
+  BW:
+    id: 28
+    name: Botswana
+    continente: africa
+    codigo: BW
+  BV:
+    id: 29
+    name: Bouvet Island
+    continente: antartida
+    codigo: BV
+  BR:
+    id: 30
+    name: Brazil
+    continente: america_del_sur
+    codigo: BR
+  IO:
+    id: 31
+    name: British Indian Ocean Territory
+    continente: africa
+    codigo: IO
+  BN:
+    id: 32
+    name: Brunei
+    continente: asia
+    codigo: BN
+  BG:
+    id: 33
+    name: Bulgaria
+    continente: europa
+    codigo: BG
+  BF:
+    id: 34
+    name: Burkina Faso
+    continente: africa
+    codigo: BF
+  BI:
+    id: 35
+    name: Burundi
+    continente: africa
+    codigo: BI
+  KH:
+    id: 36
+    name: Cambodia
+    continente: asia
+    codigo: KH
+  CM:
+    id: 37
+    name: Cameroon
+    continente: africa
+    codigo: CM
+  CA:
+    id: 38
+    name: Canada
+    continente: america_del_norte
+    codigo: CA
+  CV:
+    id: 39
+    name: Cape Verde
+    continente: africa
+    codigo: CV
+  KY:
+    id: 40
+    name: Cayman Islands
+    continente: america_del_norte
+    codigo: KY
+  CF:
+    id: 41
+    name: Central African Republic
+    continente: africa
+    codigo: CF
+  TD:
+    id: 42
+    name: Chad
+    continente: africa
+    codigo: TD
+  CL:
+    id: 43
+    name: Chile
+    continente: america_del_sur
+    codigo: CL
+  CN:
+    id: 44
+    name: China
+    continente: asia
+    codigo: CN
+  CX:
+    id: 45
+    name: Christmas Island
+    continente: oceania
+    codigo: CX
+  CC:
+    id: 46
+    name: Cocos (Keeling) Islands
+    continente: oceania
+    codigo: CC
+  CO:
+    id: 47
+    name: Colombia
+    continente: america_del_sur
+    codigo: CO
+  KM:
+    id: 48
+    name: Comoros
+    continente: africa
+    codigo: KM
+  CG:
+    id: 49
+    name: Congo
+    continente: africa
+    codigo: CG
+  CD:
+    id: 50
+    name: Congo, The Democratic Republic of the
+    continente: africa
+    codigo: CD
+  CK:
+    id: 51
+    name: Cook Islands
+    continente: oceania
+    codigo: CK
+  CR:
+    id: 52
+    name: Costa Rica
+    continente: america_del_norte
+    codigo: CR
+  CI:
+    id: 53
+    name: Cote d'Ivoire
+    continente: africa
+    codigo: CI
+  HR:
+    id: 54
+    name: Croatia
+    continente: europa
+    codigo: HR
+  CU:
+    id: 55
+    name: Cuba
+    continente: america_del_norte
+    codigo: CU
+  CY:
+    id: 56
+    name: Cyprus
+    continente: asia
+    codigo: CY
+  CZ:
+    id: 57
+    name: Czech Republic
+    continente: europa
+    codigo: CZ
+  DK:
+    id: 58
+    name: Denmark
+    continente: europa
+    codigo: DK
+  DJ:
+    id: 59
+    name: Djibouti
+    continente: africa
+    codigo: DJ
+  DM:
+    id: 60
+    name: Dominica
+    continente: america_del_norte
+    codigo: DM
+  DO:
+    id: 61
+    name: Dominican Republic
+    continente: america_del_norte
+    codigo: DO
+  TP:
+    id: 62
+    name: East Timor
+    continente: asia
+    codigo: TP
+  EC:
+    id: 63
+    name: Ecuador
+    continente: america_del_sur
+    codigo: EC
+  EG:
+    id: 64
+    name: Egypt
+    continente: africa
+    codigo: EG
+  SV:
+    id: 65
+    name: El Salvador
+    continente: america_del_norte
+    codigo: SV
+  GQ:
+    id: 66
+    name: Equatorial Guinea
+    continente: africa
+    codigo: GQ
+  ER:
+    id: 67
+    name: Eritrea
+    continente: africa
+    codigo: ER
+  EE:
+    id: 68
+    name: Estonia
+    continente: europa
+    codigo: EE
+  ET:
+    id: 69
+    name: Ethiopia
+    continente: africa
+    codigo: ET
+  FK:
+    id: 70
+    name: Falkland Islands
+    continente: america_del_sur
+    codigo: FK
+  FO:
+    id: 71
+    name: Faroe Islands
+    continente: europa
+    codigo: FO
+  FJ:
+    id: 72
+    name: Fiji Islands
+    continente: oceania
+    codigo: FJ
+  FI:
+    id: 73
+    name: Finland
+    continente: europa
+    codigo: FI
+  FR:
+    id: 74
+    name: France
+    continente: europa
+    codigo: FR
+  GF:
+    id: 75
+    name: French Guiana
+    continente: america_del_sur
+    codigo: GF
+  PF:
+    id: 76
+    name: French Polynesia
+    continente: oceania
+    codigo: PF
+  TF:
+    id: 77
+    name: French Southern territories
+    continente: antartida
+    codigo: TF
+  GA:
+    id: 78
+    name: Gabon
+    continente: africa
+    codigo: GA
+  GM:
+    id: 79
+    name: Gambia
+    continente: africa
+    codigo: GM
+  GE:
+    id: 80
+    name: Georgia
+    continente: asia
+    codigo: GE
+  DE:
+    id: 81
+    name: Germany
+    continente: europa
+    codigo: DE
+  GH:
+    id: 82
+    name: Ghana
+    continente: africa
+    codigo: GH
+  GI:
+    id: 83
+    name: Gibraltar
+    continente: europa
+    codigo: GI
+  GR:
+    id: 84
+    name: Greece
+    continente: europa
+    codigo: GR
+  GL:
+    id: 85
+    name: Greenland
+    continente: america_del_norte
+    codigo: GL
+  GD:
+    id: 86
+    name: Grenada
+    continente: america_del_norte
+    codigo: GD
+  GP:
+    id: 87
+    name: Guadeloupe
+    continente: america_del_norte
+    codigo: GP
+  GU:
+    id: 88
+    name: Guam
+    continente: oceania
+    codigo: GU
+  GT:
+    id: 89
+    name: Guatemala
+    continente: america_del_norte
+    codigo: GT
+  GN:
+    id: 90
+    name: Guinea
+    continente: africa
+    codigo: GN
+  GW:
+    id: 91
+    name: Guinea-Bissau
+    continente: africa
+    codigo: GW
+  GY:
+    id: 92
+    name: Guyana
+    continente: america_del_sur
+    codigo: GY
+  HT:
+    id: 93
+    name: Haiti
+    continente: america_del_norte
+    codigo: HT
+  HM:
+    id: 94
+    name: Heard Island and McDonald Islands
+    continente: antartida
+    codigo: HM
+  VA:
+    id: 95
+    name: Holy See (Vatican City State)
+    continente: europa
+    codigo: VA
+  HN:
+    id: 96
+    name: Honduras
+    continente: america_del_norte
+    codigo: HN
+  HK:
+    id: 97
+    name: Hong Kong
+    continente: asia
+    codigo: HK
+  HU:
+    id: 98
+    name: Hungary
+    continente: europa
+    codigo: HU
+  IS:
+    id: 99
+    name: Iceland
+    continente: europa
+    codigo: IS
+  IN:
+    id: 100
+    name: India
+    continente: asia
+    codigo: IN
+  ID:
+    id: 101
+    name: Indonesia
+    continente: asia
+    codigo: ID
+  IR:
+    id: 102
+    name: Iran
+    continente: asia
+    codigo: IR
+  IQ:
+    id: 103
+    name: Iraq
+    continente: asia
+    codigo: IQ
+  IE:
+    id: 104
+    name: Ireland
+    continente: europa
+    codigo: IE
+  IL:
+    id: 105
+    name: Israel
+    continente: asia
+    codigo: IL
+  IT:
+    id: 106
+    name: Italy
+    continente: europa
+    codigo: IT
+  JM:
+    id: 107
+    name: Jamaica
+    continente: america_del_norte
+    codigo: JM
+  JP:
+    id: 108
+    name: Japan
+    continente: asia
+    codigo: JP
+  JO:
+    id: 109
+    name: Jordan
+    continente: asia
+    codigo: JO
+  KZ:
+    id: 110
+    name: Kazakstan
+    continente: asia
+    codigo: KZ
+  KE:
+    id: 111
+    name: Kenya
+    continente: africa
+    codigo: KE
+  KI:
+    id: 112
+    name: Kiribati
+    continente: oceania
+    codigo: KI
+  KW:
+    id: 113
+    name: Kuwait
+    continente: asia
+    codigo: KW
+  KG:
+    id: 114
+    name: Kyrgyzstan
+    continente: asia
+    codigo: KG
+  LA:
+    id: 115
+    name: Laos
+    continente: asia
+    codigo: LA
+  LV:
+    id: 116
+    name: Latvia
+    continente: europa
+    codigo: LV
+  LB:
+    id: 117
+    name: Lebanon
+    continente: asia
+    codigo: LB
+  LS:
+    id: 118
+    name: Lesotho
+    continente: africa
+    codigo: LS
+  LR:
+    id: 119
+    name: Liberia
+    continente: africa
+    codigo: LR
+  LY:
+    id: 120
+    name: Libyan Arab Jamahiriya
+    continente: africa
+    codigo: LY
+  LI:
+    id: 121
+    name: Liechtenstein
+    continente: europa
+    codigo: LI
+  LT:
+    id: 122
+    name: Lithuania
+    continente: europa
+    codigo: LT
+  LU:
+    id: 123
+    name: Luxembourg
+    continente: europa
+    codigo: LU
+  MO:
+    id: 124
+    name: Macao
+    continente: asia
+    codigo: MO
+  MK:
+    id: 125
+    name: Macedonia
+    continente: europa
+    codigo: MK
+  MG:
+    id: 126
+    name: Madagascar
+    continente: africa
+    codigo: MG
+  MW:
+    id: 127
+    name: Malawi
+    continente: africa
+    codigo: MW
+  MY:
+    id: 128
+    name: Malaysia
+    continente: asia
+    codigo: MY
+  MV:
+    id: 129
+    name: Maldives
+    continente: asia
+    codigo: MV
+  ML:
+    id: 130
+    name: Mali
+    continente: africa
+    codigo: ML
+  MT:
+    id: 131
+    name: Malta
+    continente: europa
+    codigo: MT
+  MH:
+    id: 132
+    name: Marshall Islands
+    continente: oceania
+    codigo: MH
+  MQ:
+    id: 133
+    name: Martinique
+    continente: america_del_norte
+    codigo: MQ
+  MR:
+    id: 134
+    name: Mauritania
+    continente: africa
+    codigo: MR
+  MU:
+    id: 135
+    name: Mauritius
+    continente: africa
+    codigo: MU
+  YT:
+    id: 136
+    name: Mayotte
+    continente: africa
+    codigo: YT
+  MX:
+    id: 137
+    name: Mexico
+    continente: america_del_norte
+    codigo: MX
+  FM:
+    id: 138
+    name: Micronesia, Federated States of
+    continente: oceania
+    codigo: FM
+  MD:
+    id: 139
+    name: Moldova
+    continente: europa
+    codigo: MD
+  MC:
+    id: 140
+    name: Monaco
+    continente: europa
+    codigo: MC
+  MN:
+    id: 141
+    name: Mongolia
+    continente: asia
+    codigo: MN
+  MS:
+    id: 142
+    name: Montserrat
+    continente: america_del_norte
+    codigo: MS
+  MA:
+    id: 143
+    name: Morocco
+    continente: africa
+    codigo: MA
+  MZ:
+    id: 144
+    name: Mozambique
+    continente: africa
+    codigo: MZ
+  MM:
+    id: 145
+    name: Myanmar
+    continente: asia
+    codigo: MM
+  NA:
+    id: 146
+    name: Namibia
+    continente: africa
+    codigo: NA
+  NR:
+    id: 147
+    name: Nauru
+    continente: oceania
+    codigo: NR
+  NP:
+    id: 148
+    name: Nepal
+    continente: asia
+    codigo: NP
+  NL:
+    id: 149
+    name: Netherlands
+    continente: europa
+    codigo: NL
+  AN:
+    id: 150
+    name: Netherlands Antilles
+    continente: america_del_norte
+    codigo: AN
+  NC:
+    id: 151
+    name: New Caledonia
+    continente: oceania
+    codigo: NC
+  NZ:
+    id: 152
+    name: New Zealand
+    continente: oceania
+    codigo: NZ
+  NI:
+    id: 153
+    name: Nicaragua
+    continente: america_del_norte
+    codigo: NI
+  NE:
+    id: 154
+    name: Niger
+    continente: africa
+    codigo: NE
+  NG:
+    id: 155
+    name: Nigeria
+    continente: africa
+    codigo: NG
+  NU:
+    id: 156
+    name: Niue
+    continente: oceania
+    codigo: NU
+  NF:
+    id: 157
+    name: Norfolk Island
+    continente: oceania
+    codigo: NF
+  KP:
+    id: 158
+    name: North Korea
+    continente: asia
+    codigo: KP
+  MP:
+    id: 159
+    name: Northern Mariana Islands
+    continente: oceania
+    codigo: MP
+  NO:
+    id: 160
+    name: Norway
+    continente: europa
+    codigo: NO
+  OM:
+    id: 161
+    name: Oman
+    continente: asia
+    codigo: OM
+  PK:
+    id: 162
+    name: Pakistan
+    continente: asia
+    codigo: PK
+  PW:
+    id: 163
+    name: Palau
+    continente: oceania
+    codigo: PW
+  PS:
+    id: 164
+    name: Palestine
+    continente: asia
+    codigo: PS
+  PA:
+    id: 165
+    name: Panama
+    continente: america_del_norte
+    codigo: PA
+  PG:
+    id: 166
+    name: Papua New Guinea
+    continente: oceania
+    codigo: PG
+  PY:
+    id: 167
+    name: Paraguay
+    continente: america_del_sur
+    codigo: PY
+  PE:
+    id: 168
+    name: Peru
+    continente: america_del_sur
+    codigo: PE
+  PH:
+    id: 169
+    name: Philippines
+    continente: asia
+    codigo: PH
+  PN:
+    id: 170
+    name: Pitcairn
+    continente: oceania
+    codigo: PN
+  PL:
+    id: 171
+    name: Poland
+    continente: europa
+    codigo: PL
+  PT:
+    id: 172
+    name: Portugal
+    continente: europa
+    codigo: PT
+  PR:
+    id: 173
+    name: Puerto Rico
+    continente: america_del_norte
+    codigo: PR
+  QA:
+    id: 174
+    name: Qatar
+    continente: asia
+    codigo: QA
+  RE:
+    id: 175
+    name: Reunion
+    continente: africa
+    codigo: RE
+  RO:
+    id: 176
+    name: Romania
+    continente: europa
+    codigo: RO
+  RU:
+    id: 177
+    name: Russian Federation
+    continente: europa
+    codigo: RU
+  RW:
+    id: 178
+    name: Rwanda
+    continente: africa
+    codigo: RW
+  SH:
+    id: 179
+    name: Saint Helena
+    continente: africa
+    codigo: SH
+  KN:
+    id: 180
+    name: Saint Kitts and Nevis
+    continente: america_del_norte
+    codigo: KN
+  LC:
+    id: 181
+    name: Saint Lucia
+    continente: america_del_norte
+    codigo: LC
+  PM:
+    id: 182
+    name: Saint Pierre and Miquelon
+    continente: america_del_norte
+    codigo: PM
+  VC:
+    id: 183
+    name: Saint Vincent and the Grenadines
+    continente: america_del_norte
+    codigo: VC
+  WS:
+    id: 184
+    name: Samoa
+    continente: oceania
+    codigo: WS
+  SM:
+    id: 185
+    name: San Marino
+    continente: europa
+    codigo: SM
+  ST:
+    id: 186
+    name: Sao Tome and Principe
+    continente: africa
+    codigo: ST
+  SA:
+    id: 187
+    name: Saudi Arabia
+    continente: asia
+    codigo: SA
+  SN:
+    id: 188
+    name: Senegal
+    continente: africa
+    codigo: SN
+  SC:
+    id: 189
+    name: Seychelles
+    continente: africa
+    codigo: SC
+  SL:
+    id: 190
+    name: Sierra Leone
+    continente: africa
+    codigo: SL
+  SG:
+    id: 191
+    name: Singapore
+    continente: asia
+    codigo: SG
+  SK:
+    id: 192
+    name: Slovakia
+    continente: europa
+    codigo: SK
+  SI:
+    id: 193
+    name: Slovenia
+    continente: europa
+    codigo: SI
+  SB:
+    id: 194
+    name: Solomon Islands
+    continente: oceania
+    codigo: SB
+  SO:
+    id: 195
+    name: Somalia
+    continente: africa
+    codigo: SO
+  ZA:
+    id: 196
+    name: South Africa
+    continente: africa
+    codigo: ZA
+  GS:
+    id: 197
+    name: South Georgia and the South Sandwich Islands
+    continente: antartida
+    codigo: GS
+  KR:
+    id: 198
+    name: South Korea
+    continente: asia
+    codigo: KR
+  ES:
+    id: 199
+    name: Spain
+    continente: europa
+    codigo: ES
+  LK:
+    id: 200
+    name: Sri Lanka
+    continente: asia
+    codigo: LK
+  SD:
+    id: 201
+    name: Sudan
+    continente: africa
+    codigo: SD
+  SR:
+    id: 202
+    name: Suriname
+    continente: america_del_sur
+    codigo: SR
+  SJ:
+    id: 203
+    name: Svalbard and Jan Mayen
+    continente: europa
+    codigo: SJ
+  SZ:
+    id: 204
+    name: Swaziland
+    continente: africa
+    codigo: SZ
+  SE:
+    id: 205
+    name: Sweden
+    continente: europa
+    codigo: SE
+  CH:
+    id: 206
+    name: Switzerland
+    continente: europa
+    codigo: CH
+  SY:
+    id: 207
+    name: Syria
+    continente: asia
+    codigo: SY
+  TW:
+    id: 208
+    name: Taiwan
+    continente: asia
+    codigo: TW
+  TJ:
+    id: 209
+    name: Tajikistan
+    continente: asia
+    codigo: TJ
+  TZ:
+    id: 210
+    name: Tanzania
+    continente: africa
+    codigo: TZ
+  TH:
+    id: 211
+    name: Thailand
+    continente: asia
+    codigo: TH
+  TG:
+    id: 212
+    name: Togo
+    continente: africa
+    codigo: TG
+  TK:
+    id: 213
+    name: Tokelau
+    continente: oceania
+    codigo: TK
+  TO:
+    id: 214
+    name: Tonga
+    continente: oceania
+    codigo: TO
+  TT:
+    id: 215
+    name: Trinidad and Tobago
+    continente: america_del_norte
+    codigo: TT
+  TN:
+    id: 216
+    name: Tunisia
+    continente: africa
+    codigo: TN
+  TR:
+    id: 217
+    name: Turkey
+    continente: asia
+    codigo: TR
+  TM:
+    id: 218
+    name: Turkmenistan
+    continente: asia
+    codigo: TM
+  TC:
+    id: 219
+    name: Turks and Caicos Islands
+    continente: america_del_norte
+    codigo: TC
+  TV:
+    id: 220
+    name: Tuvalu
+    continente: oceania
+    codigo: TV
+  UG:
+    id: 221
+    name: Uganda
+    continente: africa
+    codigo: UG
+  UA:
+    id: 222
+    name: Ukraine
+    continente: europa
+    codigo: UA
+  AE:
+    id: 223
+    name: United Arab Emirates
+    continente: asia
+    codigo: AE
+  GB:
+    id: 224
+    name: United Kingdom
+    continente: europa
+    codigo: GB
+  US:
+    id: 225
+    name: United States
+    continente: america_del_norte
+    codigo: US
+  UM:
+    id: 226
+    name: United States Minor Outlying Islands
+    continente: oceania
+    codigo: UM
+  UY:
+    id: 227
+    name: Uruguay
+    continente: america_del_sur
+    codigo: UY
+  UZ:
+    id: 228
+    name: Uzbekistan
+    continente: asia
+    codigo: UZ
+  VU:
+    id: 229
+    name: Vanuatu
+    continente: oceania
+    codigo: VU
+  VE:
+    id: 230
+    name: Venezuela
+    continente: america_del_sur
+    codigo: VE
+  VN:
+    id: 231
+    name: Vietnam
+    continente: asia
+    codigo: VN
+  VG:
+    id: 232
+    name: Virgin Islands, British
+    continente: america_del_norte
+    codigo: VG
+  VI:
+    id: 233
+    name: Virgin Islands, U.S.
+    continente: america_del_norte
+    codigo: VI
+  WF:
+    id: 234
+    name: Wallis and Futuna
+    continente: oceania
+    codigo: WF
+  EH:
+    id: 235
+    name: Western Sahara
+    continente: africa
+    codigo: EH
+  YE:
+    id: 236
+    name: Yemen
+    continente: asia
+    codigo: YE
+  YU:
+    id: 237
+    name: Yugoslavia
+    continente: europa
+    codigo: YU
+  ZM:
+    id: 238
+    name: Zambia
+    continente: africa
+    codigo: ZM
+  ZW:
+    id: 239
+    name: Zimbabwe
+    continente: africa
+    codigo: ZW
