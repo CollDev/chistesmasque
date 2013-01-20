@@ -24,16 +24,16 @@ class Joke
     /**
      * @var string
      *
-     * @ORM\Column(name="mas", type="string", length=255)
+     * @ORM\Column(name="part1", type="string", length=255)
      */
-    private $mas;
+    private $part1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="que", type="string", length=255)
+     * @ORM\Column(name="part2", type="string", length=255)
      */
-    private $que;
+    private $part2;
 
     /**
      * @var integer
@@ -82,49 +82,49 @@ class Joke
     }
 
     /**
-     * Set mas
+     * Set part1
      *
-     * @param string $mas
+     * @param string $part1
      * @return Joke
      */
-    public function setMas($mas)
+    public function setPart1($part1)
     {
-        $this->mas = $mas;
+        $this->part1 = $part1;
     
         return $this;
     }
 
     /**
-     * Get mas
+     * Get part1
      *
      * @return string 
      */
-    public function getMas()
+    public function getPart1()
     {
-        return $this->mas;
+        return $this->part1;
     }
 
     /**
-     * Set que
+     * Set part2
      *
-     * @param string $que
+     * @param string $part2
      * @return Joke
      */
-    public function setQue($que)
+    public function setQue($part2)
     {
-        $this->que = $que;
+        $this->part2 = $part2;
     
         return $this;
     }
 
     /**
-     * Get que
+     * Get part2
      *
      * @return string 
      */
-    public function getQue()
+    public function getPart2()
     {
-        return $this->que;
+        return $this->part2;
     }
 
     /**
