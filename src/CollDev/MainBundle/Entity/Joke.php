@@ -3,15 +3,14 @@
 namespace CollDev\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
- * User
+ * Joke
  *
- * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\UserRepository")
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\JokeRepository")
  */
-class User extends BaseUser
+class Joke
 {
     /**
      * @var integer
@@ -20,36 +19,36 @@ class User extends BaseUser
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=64)
+     * @ORM\Column(name="mas", type="string", length=255)
      */
-    private $name;
+    private $mas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=64)
+     * @ORM\Column(name="que", type="string", length=255)
      */
-    private $lastname;
+    private $que;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
-     * @ORM\Column(name="birthday", type="date")
+     * @ORM\Column(name="vote", type="integer")
      */
-    private $birthday;
-    
+    private $vote;
+
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="visit", type="integer")
      */
-    private $photo;
-    
+    private $visit;
+
     /**
      * @var \DateTime
      *
@@ -63,15 +62,14 @@ class User extends BaseUser
      * @ORM\Column(name="updated", type="datetimetz")
      */
     private $updated;
-    
+
     /**
-     * Parent constructor
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="smallint")
      */
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
+    private $status;
+
 
     /**
      * Get id
@@ -84,97 +82,97 @@ class User extends BaseUser
     }
 
     /**
-     * Set name
+     * Set mas
      *
-     * @param string $name
-     * @return User
+     * @param string $mas
+     * @return Joke
      */
-    public function setName($name)
+    public function setMas($mas)
     {
-        $this->name = $name;
+        $this->mas = $mas;
     
         return $this;
     }
 
     /**
-     * Get name
+     * Get mas
      *
      * @return string 
      */
-    public function getName()
+    public function getMas()
     {
-        return $this->name;
+        return $this->mas;
     }
 
     /**
-     * Set lastname
+     * Set que
      *
-     * @param string $lastname
-     * @return User
+     * @param string $que
+     * @return Joke
      */
-    public function setLastname($lastname)
+    public function setQue($que)
     {
-        $this->lastname = $lastname;
+        $this->que = $que;
     
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get que
      *
      * @return string 
      */
-    public function getLastname()
+    public function getQue()
     {
-        return $this->lastname;
+        return $this->que;
     }
 
     /**
-     * Set birthday
+     * Set vote
      *
-     * @param \DateTime $birthday
-     * @return User
+     * @param integer $vote
+     * @return Joke
      */
-    public function setBirthday($birthday)
+    public function setVote($vote)
     {
-        $this->birthday = $birthday;
+        $this->vote = $vote;
     
         return $this;
     }
 
     /**
-     * Get birthday
+     * Get vote
      *
-     * @return \DateTime 
+     * @return integer 
      */
-    public function getBirthday()
+    public function getVote()
     {
-        return $this->birthday;
+        return $this->vote;
     }
 
     /**
-     * Set photo
+     * Set visit
      *
-     * @param string $photo
-     * @return User
+     * @param integer $visit
+     * @return Joke
      */
-    public function setPhoto($photo)
+    public function setVisit($visit)
     {
-        $this->photo = $photo;
+        $this->visit = $visit;
     
         return $this;
     }
 
     /**
-     * Get photo
+     * Get visit
      *
-     * @return string 
+     * @return integer 
      */
-    public function getPhoto()
+    public function getVisit()
     {
-        return $this->photo;
+        return $this->visit;
     }
-    
+
     /**
      * Set created
      *
@@ -219,5 +217,28 @@ class User extends BaseUser
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Set status
+     *
+     * @param integer $status
+     * @return Joke
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return integer 
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 }
