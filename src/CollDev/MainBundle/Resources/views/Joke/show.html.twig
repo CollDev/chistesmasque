@@ -1,0 +1,57 @@
+<h1>Joke</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Part1</th>
+            <td>{{ entity.part1 }}</td>
+        </tr>
+        <tr>
+            <th>Part2</th>
+            <td>{{ entity.part2 }}</td>
+        </tr>
+        <tr>
+            <th>Vote</th>
+            <td>{{ entity.vote }}</td>
+        </tr>
+        <tr>
+            <th>Visit</th>
+            <td>{{ entity.visit }}</td>
+        </tr>
+        <tr>
+            <th>Created</th>
+            <td>{{ entity.created }}</td>
+        </tr>
+        <tr>
+            <th>Updated</th>
+            <td>{{ entity.updated }}</td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>{{ entity.status }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('joke') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('joke_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('joke_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
