@@ -20,6 +20,13 @@ class TimeZone
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var integer $users
+     * 
+     * @ORM\OneToMany(targetEntity="User", mappedBy="country")
+     */
+    private $users;
 
     /**
      * @var string
@@ -42,6 +49,13 @@ class TimeZone
      */
     private $hours;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -53,6 +67,39 @@ class TimeZone
         return $this->id;
     }
 
+    /**
+     * Add users
+     *
+     * @param \CollDev\MainBundle\Entity\User $users
+     * @return TimeZone
+     */
+    public function addUser(\CollDev\MainBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \CollDev\MainBundle\Entity\User $users
+     */
+    public function removeUser(\CollDev\MainBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+    
     /**
      * Set name
      *

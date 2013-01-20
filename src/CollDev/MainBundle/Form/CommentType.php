@@ -12,9 +12,13 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('likeme')
+            ->add('star')
             ->add('created')
             ->add('updated')
             ->add('status')
+            ->add('user')
+            ->add('joke')
         ;
     }
 

@@ -12,6 +12,7 @@ class RestrictionType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('users')
         ;
     }
 

@@ -20,6 +20,40 @@ class Joke
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var integer $user_id
+     * 
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="jokes")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $user;
+    
+    /**
+     * @var integer $restriction_id
+     * 
+     * @ORM\ManyToOne(targetEntity="Restriction", inversedBy="jokes")
+     * @ORM\JoinColumn(name="restriction_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $restriction;
+    
+    /**
+     * @var integer $category_id
+     * 
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="jokes")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $category;
+    
+    /**
+     * @var integer $comments
+     * 
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="joke")
+     */
+    private $comments;
 
     /**
      * @var string
@@ -69,6 +103,14 @@ class Joke
      * @ORM\Column(name="status", type="smallint")
      */
     private $status;
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -79,6 +121,108 @@ class Joke
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set user
+     *
+     * @param \CollDev\MainBundle\Entity\User $user
+     * @return Joke
+     */
+    public function setUser(\CollDev\MainBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \CollDev\MainBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
+    /**
+     * Set restriction
+     *
+     * @param \CollDev\MainBundle\Entity\Restriction $restriction
+     * @return Joke
+     */
+    public function setRestriction(\CollDev\MainBundle\Entity\Restriction $restriction)
+    {
+        $this->restriction = $restriction;
+    
+        return $this;
+    }
+
+    /**
+     * Get restriction
+     *
+     * @return \CollDev\MainBundle\Entity\Restriction 
+     */
+    public function getRestriction()
+    {
+        return $this->restriction;
+    }
+    
+    /**
+     * Set category
+     *
+     * @param \CollDev\MainBundle\Entity\Category $category
+     * @return Joke
+     */
+    public function setCategory(\CollDev\MainBundle\Entity\Category $category)
+    {
+        $this->category = $category;
+    
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \CollDev\MainBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+    
+    /**
+     * Add comments
+     *
+     * @param \CollDev\MainBundle\Entity\Comment $comments
+     * @return Joke
+     */
+    public function addComment(\CollDev\MainBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \CollDev\MainBundle\Entity\Comment $comments
+     */
+    public function removeComment(\CollDev\MainBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 
     /**

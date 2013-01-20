@@ -20,6 +20,13 @@ class Continent
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var integer $countrys
+     * 
+     * @ORM\OneToMany(targetEntity="Country", mappedBy="continent")
+     */
+    private $countrys;
 
     /**
      * @var string
@@ -28,6 +35,13 @@ class Continent
      */
     private $name;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->countrys = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -37,6 +51,39 @@ class Continent
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Add countrys
+     *
+     * @param \CollDev\MainBundle\Entity\Country $countrys
+     * @return Continent
+     */
+    public function addCountry(\CollDev\MainBundle\Entity\Country $countrys)
+    {
+        $this->countrys[] = $countrys;
+    
+        return $this;
+    }
+
+    /**
+     * Remove countrys
+     *
+     * @param \CollDev\MainBundle\Entity\Country $countrys
+     */
+    public function removeCountry(\CollDev\MainBundle\Entity\Country $countrys)
+    {
+        $this->countrys->removeElement($countrys);
+    }
+
+    /**
+     * Get countrys
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCountrys()
+    {
+        return $this->countrys;
     }
 
     /**

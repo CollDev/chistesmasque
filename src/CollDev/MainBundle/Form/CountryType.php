@@ -13,6 +13,7 @@ class CountryType extends AbstractType
         $builder
             ->add('name')
             ->add('code')
+            ->add('continent')
         ;
     }
 

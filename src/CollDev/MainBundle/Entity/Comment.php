@@ -20,6 +20,24 @@ class Comment
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var integer $user_id
+     * 
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="comments")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $user;
+    
+    /**
+     * @var integer $joke_id
+     * 
+     * @ORM\ManyToOne(targetEntity="Joke", inversedBy="comments")
+     * @ORM\JoinColumn(name="joke_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $joke;
 
     /**
      * @var string
@@ -72,6 +90,52 @@ class Comment
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * Set user
+     *
+     * @param \CollDev\MainBundle\Entity\User $user
+     * @return Comment
+     */
+    public function setUser(\CollDev\MainBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \CollDev\MainBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+    
+    /**
+     * Set joke
+     *
+     * @param \CollDev\MainBundle\Entity\Joke $joke
+     * @return Comment
+     */
+    public function setJoke(\CollDev\MainBundle\Entity\Joke $joke)
+    {
+        $this->joke = $joke;
+    
+        return $this;
+    }
+
+    /**
+     * Get joke
+     *
+     * @return \CollDev\MainBundle\Entity\Joke 
+     */
+    public function getJoke()
+    {
+        return $this->joke;
     }
 
     /**

@@ -18,6 +18,9 @@ class JokeType extends AbstractType
             ->add('created')
             ->add('updated')
             ->add('status')
+            ->add('user')
+            ->add('restriction')
+            ->add('category')
         ;
     }
 

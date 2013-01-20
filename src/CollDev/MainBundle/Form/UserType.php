@@ -33,6 +33,9 @@ class UserType extends AbstractType
             ->add('photo')
             ->add('created')
             ->add('updated')
+            ->add('country')
+            ->add('timezone')
+            ->add('restrictions')
         ;
     }
 
