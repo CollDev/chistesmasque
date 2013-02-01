@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CollDev\MainBundle\Entity\User;
 use CollDev\MainBundle\Form\UserType;
-use CollDev\MainBundle\Form\Type\RegistrationFormType;
 
 /**
  * User controller.
@@ -68,7 +67,7 @@ class UserController extends Controller
     public function newAction()
     {
         $entity = new User();
-        $form   = $this->createForm(new RegistrationFormType(), $entity);
+        $form   = $this->createForm(new UserType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -85,7 +84,6 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
-        return $this->forward('FOSUserBundle:Registration:register');
         $entity  = new User();
         $form = $this->createForm(new UserType(), $entity);
         $form->bind($request);

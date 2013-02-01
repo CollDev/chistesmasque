@@ -10,6 +10,7 @@ use FOS\UserBundle\Entity\User as BaseUser;
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\UserRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User extends BaseUser
 {
@@ -30,16 +31,7 @@ class User extends BaseUser
      * @return integer
      */
     private $country;
-    
-    /**
-     * @var integer $timezone_id
-     * 
-     * @ORM\ManyToOne(targetEntity="TimeZone", inversedBy="users")
-     * @ORM\JoinColumn(name="timezone_id", referencedColumnName="id", nullable=false)
-     * @return integer
-     */
-    private $timezone;
-    
+
     /**
      * @var integer $jokes
      * 
@@ -66,44 +58,58 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=64)
+     * @ORM\Column(name="firstname", type="string", length=64, nullable=true)
      */
-    private $name;
+    private $firstname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=64)
+     * @ORM\Column(name="lastname", type="string", length=64, nullable=true)
      */
     private $lastname;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthday", type="date")
+     * @ORM\Column(name="birthday", type="date", nullable=true)
      */
     private $birthday;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="photo", type="string", length=255)
+     * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
     private $photo;
     
     /**
+     * @var string
+     *
+     * @ORM\Column(name="timezone", type="datetimetz", length=255, nullable=true)
+     */
+    private $timezone;
+    
+    /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetimetz")
+     * @ORM\Column(name="created", type="datetime")
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetimetz")
+     * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="smallint")
+     */
+    private $status;
     
     /**
      * Parent constructor
@@ -147,29 +153,6 @@ class User extends BaseUser
     public function getCountry()
     {
         return $this->country;
-    }
-    
-    /**
-     * Set timezone
-     *
-     * @param \CollDev\MainBundle\Entity\TimeZone $timezone
-     * @return User
-     */
-    public function setTimezone(\CollDev\MainBundle\Entity\TimeZone $timezone)
-    {
-        $this->timezone = $timezone;
-    
-        return $this;
-    }
-
-    /**
-     * Get timezone
-     *
-     * @return \CollDev\MainBundle\Entity\TimeZone 
-     */
-    public function getTimezone()
-    {
-        return $this->timezone;
     }
 
     /**
@@ -272,26 +255,26 @@ class User extends BaseUser
     }
 
     /**
-     * Set name
+     * Set firstname
      *
-     * @param string $name
+     * @param string $firstname
      * @return User
      */
-    public function setName($name)
+    public function setFirstname($firstname)
     {
-        $this->name = $name;
+        $this->firstname = $firstname;
     
         return $this;
     }
 
     /**
-     * Get name
+     * Get firstname
      *
      * @return string 
      */
-    public function getName()
+    public function getFirstname()
     {
-        return $this->name;
+        return $this->firstname;
     }
 
     /**
@@ -364,6 +347,29 @@ class User extends BaseUser
     }
     
     /**
+     * Set timezone
+     *
+     * @param string $timezone
+     * @return User
+     */
+    public function setTimezone($timezone)
+    {
+        $this->timezone = $timezone;
+    
+        return $this;
+    }
+
+    /**
+     * Get timezone
+     *
+     * @return string 
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+    
+    /**
      * Set created
      *
      * @param \DateTime $created
@@ -407,5 +413,51 @@ class User extends BaseUser
     public function getUpdated()
     {
         return $this->updated;
+    }
+    
+    /**
+     * Set status
+     *
+     * @param integer $status
+     * @return User
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return integer 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    
+    /**
+     * Uploads a user picture
+     */
+    public function upload()
+    {
+        if (null === $this->photo) return;
+        $dir = __DIR__.'/../Resources/private/pictures';
+        $this->photo->move($dir, $this->photo->getClientOriginalName());
+        $this->setPhoto($this->photo->getClientOriginalName());
+    }
+    
+    /**
+     * Defaults when inserting a user
+     * 
+     * @ORM\PrePersist
+     */
+    public function prePersistTasks()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime('0000-00-00 00:00:00'));
+        $this->setStatus(1);
     }
 }

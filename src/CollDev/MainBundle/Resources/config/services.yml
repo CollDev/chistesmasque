@@ -1,0 +1,6 @@
+services:
+    colldev_main.registration.form.type:
+        class: CollDev\MainBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: colldev_main_registration }

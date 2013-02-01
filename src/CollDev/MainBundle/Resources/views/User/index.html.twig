@@ -20,10 +20,11 @@
             <th>Credentialsexpired</th>
             <th>Credentialsexpireat</th>
             <th>Id</th>
-            <th>Name</th>
+            <th>Firstname</th>
             <th>Lastname</th>
             <th>Birthday</th>
             <th>Photo</th>
+            <th>Timezone</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Actions</th>
@@ -49,10 +50,11 @@
             <td>{{ entity.credentialsExpired }}</td>
             <td>{% if entity.credentialsExpireAt %}{{ entity.credentialsExpireAt|date('Y-m-d H:i:s') }}{% endif %}</td>
             <td>{{ entity.id }}</td>
-            <td>{{ entity.name }}</td>
+            <td>{{ entity.firstname }}</td>
             <td>{{ entity.lastname }}</td>
             <td>{% if entity.birthday %}{{ entity.birthday|date('Y-m-d H:i:s') }}{% endif %}</td>
             <td>{{ entity.photo }}</td>
+            <td>{{ entity.timezone }}</td>
             <td>{{ entity.created }}</td>
             <td>{{ entity.updated }}</td>
             <td>
