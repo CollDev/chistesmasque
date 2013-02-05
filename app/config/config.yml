@@ -72,6 +72,9 @@ fos_user:
             from_email:
                 address: no-reply@chistesmasque.com
                 sender_name: Manager
+    profile:
+        form:
+            type: colldev_main_profile
 
 parameters:
     transport: sendmail

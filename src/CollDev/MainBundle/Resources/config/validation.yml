@@ -1,0 +1,7 @@
+CollDev\MainBundle\Entity\User:
+    properties:
+        photo:
+            - File:
+                maxSize: 10000k
+                mimeTypes: [image/jpg, image/png, image/gif, image/jpeg]
+                mimeTypesMessage: Please use only JPG, PNG or GIF files.

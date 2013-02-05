@@ -75,18 +75,25 @@ class User extends BaseUser
      * @ORM\Column(name="birthday", type="date", nullable=true)
      */
     private $birthday;
-    
+
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="photo", type="string", length=255, nullable=true)
      */
-    private $photo;
+    public $photo;
     
     /**
      * @var string
+     * 
+     * @ORM\Column(name="file", type="string", length=255, nullable=true)
+     */
+    public $file;
+
+    /**
+     * @var string
      *
-     * @ORM\Column(name="timezone", type="datetimetz", length=255, nullable=true)
+     * @ORM\Column(name="timezone", type="string", length=255, nullable=true)
      */
     private $timezone;
     
@@ -347,6 +354,29 @@ class User extends BaseUser
     }
     
     /**
+     * Set file
+     *
+     * @param string $file
+     * @return User
+     */
+    public function setFile($file)
+    {
+        $this->file = $file;
+    
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return string 
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    /**
      * Set timezone
      *
      * @param string $timezone
@@ -437,27 +467,109 @@ class User extends BaseUser
     {
         return $this->status;
     }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->file
+            ? null
+            : $this->getUploadRootDir().'/'.$this->file;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->file
+            ? null
+            : '/' . $this->getUploadDir().'/'.$this->file;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads/photos';
+    }
     
-    /**
-     * Uploads a user picture
-     */
+    public function preUpload()
+    {
+        if (null !== $this->photo) {
+            // do whatever you want to generate a unique name
+            $filename = sha1(uniqid(mt_rand(), true));
+            $this->file = $filename.'.'.$this->photo->guessExtension();
+            //$this->file = $this->photo->getClientOriginalName();
+        }
+    }
+
     public function upload()
     {
-        if (null === $this->photo) return;
-        $dir = __DIR__.'/../Resources/private/pictures';
-        $this->photo->move($dir, $this->photo->getClientOriginalName());
-        $this->setPhoto($this->photo->getClientOriginalName());
+        if (null === $this->photo) {
+            return;
+        }
+
+        // if there is an error when moving the file, an exception will
+        // be automatically thrown by move(). This will properly prevent
+        // the entity from being persisted to the database on error
+        $this->photo->move($this->getUploadRootDir(), $this->file);
+        $this->setPhoto($this->file);
+    }
+
+    public function removeUpload()
+    {
+        if ($file = $this->getAbsolutePath()) {
+            unlink($file);
+        }
     }
     
     /**
      * Defaults when inserting a user
      * 
-     * @ORM\PrePersist
+     * @ORM\PrePersist()
      */
     public function prePersistTasks()
     {
+        $this->preUpload();
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime('0000-00-00 00:00:00'));
         $this->setStatus(1);
+    }
+    
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function preUpdateTasks()
+    {
+        $this->preUpload();
+    }
+    
+    /**
+     * Defaults when inserting a user
+     * 
+     * @ORM\PostPersist()
+     */
+    public function postPersistTasks()
+    {
+        $this->upload();
+    }
+    
+    /**
+     * @ORM\PostUpdate()
+     */
+    public function postUpdateTasks()
+    {
+        $this->upload();
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function postRemoveTasks()
+    {
+        $this->removeUpload();
     }
 }
