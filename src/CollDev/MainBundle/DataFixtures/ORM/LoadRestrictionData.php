@@ -5,9 +5,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use CollDev\MainBundle\DataFixtures\ORM\LoadCollDevData;
-use CollDev\MainBundle\Entity\Continent as Continent;
+use CollDev\MainBundle\Entity\Restriction as Restriction;
 
-class LoadContinentData extends LoadCollDevData implements OrderedFixtureInterface
+class LoadUserData extends LoadCollDevData implements OrderedFixtureInterface
 {
     /**
      * Main load function.
@@ -16,17 +16,17 @@ class LoadContinentData extends LoadCollDevData implements OrderedFixtureInterfa
      */
     function load(ObjectManager $manager)
     {
-        $continents = $this->getModelFixtures();
+        $restrictions = $this->getModelFixtures();
 
         // Now iterate thought all fixtures
-        foreach ($continents['Continent'] as $reference => $columns)
+        foreach ($restrictions['Restriction'] as $reference => $columns)
         {
-            $continent = new Continent();
-            $continent->setName($columns['name']);
-            $manager->persist($continent);
+            $restriction = new Restriction();
+            $restriction->setName($columns['name']);
+            $manager->persist($restriction);
 
             // Add a reference to be able to use this object in others entities loaders
-            $this->addReference('Continent_'. $reference, $continent);
+            $this->addReference('Restriction_'. $reference, $restriction);
         }
         $manager->flush();
     }
@@ -36,7 +36,7 @@ class LoadContinentData extends LoadCollDevData implements OrderedFixtureInterfa
      */
     public function getModelFile()
     {
-        return 'continents';
+        return 'restrictions';
     }
 
     /**
