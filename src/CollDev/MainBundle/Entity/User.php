@@ -501,6 +501,7 @@ class User extends BaseUser
         if (null !== $this->photo) {
             // do whatever you want to generate a unique name
             $filename = sha1(uniqid(mt_rand(), true));
+            if ($this->file != '') $this->removeUpload();
             $this->file = $filename.'.'.$this->photo->guessExtension();
             //$this->file = $this->photo->getClientOriginalName();
         }
