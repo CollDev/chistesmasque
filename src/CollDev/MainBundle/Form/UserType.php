@@ -12,28 +12,62 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('usernameCanonical')
+            //->add('usernameCanonical')
             ->add('email')
-            ->add('emailCanonical')
+            //->add('emailCanonical')
             ->add('enabled')
-            ->add('salt')
-            ->add('password')
-            ->add('lastLogin')
-            ->add('locked')
-            ->add('expired')
-            ->add('expiresAt')
-            ->add('confirmationToken')
-            ->add('passwordRequestedAt')
-            ->add('roles')
-            ->add('credentialsExpired')
-            ->add('credentialsExpireAt')
-            ->add('name')
+            //->add('salt')
+            ->add('plainPassword', 'repeated', array(
+                'type' => 'password',
+                'options' => array(
+                    'translation_domain' => 'FOSUserBundle'
+                    ),
+                'invalid_message' => 'fos_user.password.mismatch',
+                'first_options' => array(
+                    'label' => 'form.password',
+                    'label_attr' => array(
+                        'class' => 'control-label'
+                        ),
+                    'attr' => array(
+                        'class' => 'input-block-level',
+                        'placeholder' => 'form.password'
+                        )
+                    ),
+                'second_options' => array(
+                    'label' => 'form.password_confirmation',
+                    'label_attr' => array(
+                        'class' => 'control-label'
+                        ),
+                    'attr' => array(
+                        'class' => 'input-block-level',
+                        'placeholder' => 'form.password_confirmation'
+                        )
+                    ),
+            ))
+            //->add('lastLogin')
+            ->add('locked', null, array(
+                'required' => false,
+            ))
+            //->add('expired')
+            //->add('expiresAt')
+            //->add('confirmationToken')
+            //->add('passwordRequestedAt')
+            //->add('roles')
+            //->add('credentialsExpired')
+            //->add('credentialsExpireAt')
+            ->add('firstname')
             ->add('lastname')
             ->add('birthday')
-            ->add('photo')
-            ->add('created')
-            ->add('updated')
-            ->add('country')
+            ->add('photo', 'file', array(
+                'data_class' => null,
+                'required' => false,
+            ))
+            //->add('created')
+            //->add('updated')
+            ->add('country', 'entity', array(
+                'class' => 'CollDevMainBundle:Country', 
+                'property' => 'name',
+            ))
             ->add('timezone')
             ->add('restrictions')
         ;
