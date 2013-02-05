@@ -58,14 +58,14 @@ class Joke
     /**
      * @var string
      *
-     * @ORM\Column(name="part1", type="string", length=255)
+     * @ORM\Column(name="part1", type="text")
      */
     private $part1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="part2", type="string", length=255)
+     * @ORM\Column(name="part2", type="text")
      */
     private $part2;
 
@@ -86,14 +86,14 @@ class Joke
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetimetz")
+     * @ORM\Column(name="created", type="datetime")
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetimetz")
+     * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
 

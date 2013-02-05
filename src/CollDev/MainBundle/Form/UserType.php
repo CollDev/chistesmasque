@@ -68,7 +68,7 @@ class UserType extends AbstractType
                 'class' => 'CollDevMainBundle:Country', 
                 'property' => 'name',
             ))
-            ->add('timezone')
+            ->add('timezone', 'timezone')
             ->add('restrictions')
         ;
     }
