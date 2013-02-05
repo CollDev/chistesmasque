@@ -13,15 +13,21 @@ class ProfileFormType extends AbstractType
     {
         $builder
             ->add('firstname', null, array(
+                'required' => true,
                 'label' => 'form.firstname',
                 'translation_domain' => 'FOSUserBundle'
             ))
             ->add('lastname', null, array(
+                'required' => true,
                 'label' => 'form.lastname',
                 'translation_domain' => 'FOSUserBundle'
             ))
-            ->add('birthday', null, array(
+            ->add('birthday', 'date', array(
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd-MM-yyyy',
                 'label' => 'form.birthday',
+                'empty_value' => '',
                 'translation_domain' => 'FOSUserBundle'
             ))
             ->add('photo', null, array(
@@ -33,20 +39,15 @@ class ProfileFormType extends AbstractType
                 'required' => false,
                 'data_class' => null,
             ))
-            ->add('country', 'entity', array(
+            ->add('country', 'country', array(
                 'label_attr' => array(
                     'class' => 'control-label'
                 ),
-                'class' => 'CollDevMainBundle:Country',
-                'property' => 'name',
-                'attr' => array(
-                    'class' => 'input-block-level',
-                    'placeholder' => 'País',
-                    'data-selected' => 13
-                )
+                'empty_value' => 'Seleccione',
             ))
             ->add('timezone', 'timezone', array(
                 'label' => 'form.timezone',
+                'empty_value' => 'Seleccione',
                 'translation_domain' => 'FOSUserBundle'
             ))    
             ->add('username', null, array(

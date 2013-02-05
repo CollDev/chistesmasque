@@ -11,12 +11,11 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('country', 'entity', array(
+            ->add('country', 'country', array(
                 'label_attr' => array(
                     'class' => 'control-label'
                     ),
-                'class' => 'CollDevMainBundle:Country',
-                'property' => 'name',
+                'empty_value' => 'Choose an option',
                 'attr' => array(
                     'class' => 'input-block-level',
                     'placeholder' => 'País',
