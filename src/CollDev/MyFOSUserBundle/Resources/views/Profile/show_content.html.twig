@@ -3,7 +3,7 @@
     <p>{{ 'profile.show.lastname'|trans({}, 'FOSUserBundle') }}: {{ user.lastname }}</p>
     <p>{{ 'profile.show.birthday'|trans({}, 'FOSUserBundle') }}: {{ user.birthday|date('d m Y') }}</p>
     <p>{{ 'profile.show.photo'|trans({}, 'FOSUserBundle') }}: <img src="{{ user.getWebPath }}" /></p>
-    <p>{{ 'profile.show.country'|trans({}, 'FOSUserBundle') }}: {{ user.country.name }}</p>
+    <p>{{ 'profile.show.country'|trans({}, 'FOSUserBundle') }}: {{ user.country }}</p>
     <p>{{ 'profile.show.timezone'|trans({}, 'FOSUserBundle') }}: {{ user.timezone }}</p>
     <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
     <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
