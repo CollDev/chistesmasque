@@ -24,11 +24,9 @@ class User extends BaseUser
     protected $id;
     
     /**
-     * @var integer $country_id
+     * @var string
      * 
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="users")
-     * @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=false)
-     * @return integer
+     * @ORM\Column(name="country", type="string", length=255, nullable=true)
      */
     private $country;
 
@@ -142,10 +140,10 @@ class User extends BaseUser
     /**
      * Set country
      *
-     * @param \CollDev\MainBundle\Entity\Country $country
+     * @param string $country
      * @return User
      */
-    public function setCountry(\CollDev\MainBundle\Entity\Country $country)
+    public function setCountry($country)
     {
         $this->country = $country;
     
@@ -155,7 +153,7 @@ class User extends BaseUser
     /**
      * Get country
      *
-     * @return \CollDev\MainBundle\Entity\Country 
+     * @return string
      */
     public function getCountry()
     {
@@ -546,6 +544,7 @@ class User extends BaseUser
     public function preUpdateTasks()
     {
         $this->preUpload();
+        $this->setUpdated(new \DateTime());
     }
     
     /**

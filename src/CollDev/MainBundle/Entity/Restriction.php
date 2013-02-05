@@ -22,11 +22,11 @@ class Restriction
     private $id;
     
     /**
-     * @var integer $jokes
+     * @var integer $categorys
      * 
-     * @ORM\OneToMany(targetEntity="Joke", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="user")
      */
-    private $jokes;
+    private $categorys;
     
     /**
      * @ORM\ManyToMany(targetEntity="User", mappedBy="restriction")
@@ -45,7 +45,7 @@ class Restriction
      */
     public function __construct()
     {
-        $this->jokes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categorys = new \Doctrine\Common\Collections\ArrayCollection();
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -61,36 +61,36 @@ class Restriction
     }
 
     /**
-     * Add jokes
+     * Add categorys
      *
-     * @param \CollDev\MainBundle\Entity\Joke $jokes
+     * @param \CollDev\MainBundle\Entity\Category $categorys
      * @return Restriction
      */
-    public function addJoke(\CollDev\MainBundle\Entity\Joke $jokes)
+    public function addCategory(\CollDev\MainBundle\Entity\Category $categorys)
     {
-        $this->jokes[] = $jokes;
+        $this->categorys[] = $categorys;
     
         return $this;
     }
 
     /**
-     * Remove jokes
+     * Remove categorys
      *
-     * @param \CollDev\MainBundle\Entity\Joke $jokes
+     * @param \CollDev\MainBundle\Entity\Category $categorys
      */
-    public function removeJoke(\CollDev\MainBundle\Entity\Joke $jokes)
+    public function removeCategory(\CollDev\MainBundle\Entity\Category $categorys)
     {
-        $this->jokes->removeElement($jokes);
+        $this->categorys->removeElement($categorys);
     }
 
     /**
-     * Get jokes
+     * Get categorys
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getJokes()
+    public function getCategorys()
     {
-        return $this->jokes;
+        return $this->categorys;
     }
     
     /**

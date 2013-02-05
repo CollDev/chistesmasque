@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="comment")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\CommentRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Comment
 {
@@ -63,14 +64,14 @@ class Comment
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetimetz")
+     * @ORM\Column(name="created", type="datetime")
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated", type="datetimetz")
+     * @ORM\Column(name="updated", type="datetime")
      */
     private $updated;
 
@@ -274,5 +275,25 @@ class Comment
     public function getStatus()
     {
         return $this->status;
+    }
+    
+    /**
+     * Defaults when inserting a user
+     * 
+     * @ORM\PrePersist()
+     */
+    public function prePersistTasks()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime('0000-00-00 00:00:00'));
+        $this->setStatus(1);
+    }
+    
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function preUpdateTasks()
+    {
+        $this->setUpdated(new \DateTime());
     }
 }

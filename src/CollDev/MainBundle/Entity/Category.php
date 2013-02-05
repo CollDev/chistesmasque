@@ -27,6 +27,15 @@ class Category
      * @ORM\OneToMany(targetEntity="Joke", mappedBy="user")
      */
     private $jokes;
+    
+    /**
+     * @var integer $restriction_id
+     * 
+     * @ORM\ManyToOne(targetEntity="Restriction", inversedBy="categorys")
+     * @ORM\JoinColumn(name="restriction_id", referencedColumnName="id", nullable=false)
+     * @return integer
+     */
+    private $restriction;
 
     /**
      * @var string
@@ -54,29 +63,6 @@ class Category
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return Category
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string 
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-    
     /**
      * Add jokes
      *
@@ -108,5 +94,51 @@ class Category
     public function getJokes()
     {
         return $this->jokes;
+    }
+    
+    /**
+     * Set restriction
+     *
+     * @param \CollDev\MainBundle\Entity\Restriction $restriction
+     * @return Category
+     */
+    public function setRestriction(\CollDev\MainBundle\Entity\Restriction $restriction)
+    {
+        $this->restriction = $restriction;
+    
+        return $this;
+    }
+
+    /**
+     * Get restriction
+     *
+     * @return \CollDev\MainBundle\Entity\Restriction 
+     */
+    public function getRestriction()
+    {
+        return $this->restriction;
+    }
+    
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Category
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 }

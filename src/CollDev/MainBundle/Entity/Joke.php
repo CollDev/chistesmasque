@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="joke")
  * @ORM\Entity(repositoryClass="CollDev\MainBundle\Entity\JokeRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Joke
 {
@@ -29,16 +30,7 @@ class Joke
      * @return integer
      */
     private $user;
-    
-    /**
-     * @var integer $restriction_id
-     * 
-     * @ORM\ManyToOne(targetEntity="Restriction", inversedBy="jokes")
-     * @ORM\JoinColumn(name="restriction_id", referencedColumnName="id", nullable=false)
-     * @return integer
-     */
-    private $restriction;
-    
+
     /**
      * @var integer $category_id
      * 
@@ -145,30 +137,7 @@ class Joke
     {
         return $this->user;
     }
-    
-    /**
-     * Set restriction
-     *
-     * @param \CollDev\MainBundle\Entity\Restriction $restriction
-     * @return Joke
-     */
-    public function setRestriction(\CollDev\MainBundle\Entity\Restriction $restriction)
-    {
-        $this->restriction = $restriction;
-    
-        return $this;
-    }
 
-    /**
-     * Get restriction
-     *
-     * @return \CollDev\MainBundle\Entity\Restriction 
-     */
-    public function getRestriction()
-    {
-        return $this->restriction;
-    }
-    
     /**
      * Set category
      *
@@ -384,5 +353,25 @@ class Joke
     public function getStatus()
     {
         return $this->status;
+    }
+    
+    /**
+     * Defaults when inserting a user
+     * 
+     * @ORM\PrePersist()
+     */
+    public function prePersistTasks()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime('0000-00-00 00:00:00'));
+        $this->setStatus(1);
+    }
+    
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function preUpdateTasks()
+    {
+        $this->setUpdated(new \DateTime());
     }
 }
