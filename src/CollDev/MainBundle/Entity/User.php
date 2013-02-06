@@ -43,15 +43,6 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
      */
     private $comments;
-    
-    /**
-     * @ORM\ManyToMany(targetEntity="Restriction")
-     * @ORM\JoinTable(name="user_has_restriction",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="restriction_id", referencedColumnName="id")}
-     *      )
-     */
-    private $restrictions;
 
     /**
      * @var string
@@ -224,39 +215,6 @@ class User extends BaseUser
     public function getComments()
     {
         return $this->comments;
-    }
-    
-    /**
-     * Add restrictions
-     *
-     * @param \CollDev\MainBundle\Entity\Restriction $restrictions
-     * @return User
-     */
-    public function addRestriction(\CollDev\MainBundle\Entity\Restriction $restrictions)
-    {
-        $this->restrictions[] = $restrictions;
-    
-        return $this;
-    }
-
-    /**
-     * Remove restrictions
-     *
-     * @param \CollDev\MainBundle\Entity\Restriction $restrictions
-     */
-    public function removeRestriction(\CollDev\MainBundle\Entity\Restriction $restrictions)
-    {
-        $this->restrictions->removeElement($restrictions);
-    }
-
-    /**
-     * Get restrictions
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getRestrictions()
-    {
-        return $this->restrictions;
     }
 
     /**
