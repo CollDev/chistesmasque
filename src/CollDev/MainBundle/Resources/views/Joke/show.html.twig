@@ -30,7 +30,7 @@
         </tr>
         <tr>
             <th>Updated</th>
-            <td>{{ entity.updated|date('Y-m-d H:i:s') }}</td>
+            <td>̣{% if (entity.updated|date('Y-m-d H:i:s') != '-0001-11-30 00:00:00') %}{{ entity.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
         </tr>
         ̣{% if (app.user.id == entity.user.id) %}
         <tr>
