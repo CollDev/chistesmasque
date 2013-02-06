@@ -5,9 +5,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use CollDev\MainBundle\DataFixtures\ORM\LoadCollDevData;
-use CollDev\MainBundle\Entity\Restriction as Restriction;
+use CollDev\MainBundle\Entity\Category as Category;
 
-class LoadUserData extends LoadCollDevData implements OrderedFixtureInterface
+class LoadCategoryData extends LoadCollDevData implements OrderedFixtureInterface
 {
     /**
      * Main load function.
@@ -16,17 +16,17 @@ class LoadUserData extends LoadCollDevData implements OrderedFixtureInterface
      */
     function load(ObjectManager $manager)
     {
-        $restrictions = $this->getModelFixtures();
+        $categorys = $this->getModelFixtures();
 
         // Now iterate thought all fixtures
-        foreach ($restrictions['Restriction'] as $reference => $columns)
+        foreach ($categorys['Category'] as $reference => $columns)
         {
-            $restriction = new Restriction();
-            $restriction->setName($columns['name']);
-            $manager->persist($restriction);
+            $category = new Category();
+            $category->setName($columns['name']);
+            $manager->persist($category);
 
             // Add a reference to be able to use this object in others entities loaders
-            $this->addReference('Restriction_'. $reference, $restriction);
+            $this->addReference('Category_'. $reference, $category);
         }
         $manager->flush();
     }
@@ -36,7 +36,7 @@ class LoadUserData extends LoadCollDevData implements OrderedFixtureInterface
      */
     public function getModelFile()
     {
-        return 'restrictions';
+        return 'categories';
     }
 
     /**

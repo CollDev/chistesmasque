@@ -1,0 +1,21 @@
+User:
+    joe:
+        firstname: Joe
+        lastname: Robles
+        username: jrobles
+        email: joe.robles.pdj@gmail.com
+        plainpassword: 123abc
+        enabled: true
+        birthday: 1980-05-03
+        country: PE
+        timezone: America/Lima
+    enmanuel:
+        firstname: 
+        lastname: 
+        username: emestanza
+        email: emiljacobo@gmail.com
+        plainpassword: 123abc
+        enabled: true
+        birthday: 
+        country: VE
+        timezone: 
