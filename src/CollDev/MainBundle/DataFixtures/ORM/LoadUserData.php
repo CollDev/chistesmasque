@@ -30,7 +30,6 @@ class LoadUserData extends LoadCollDevData implements OrderedFixtureInterface
             $user->setEmailCanonical($columns['email']);
             $user->setPlainPassword($columns['plainpassword']);
             $user->setEnabled($columns['enabled']);
-            $user->setBirthday(new \DateTime(date("Y-m-d H:i:s", strtotime($columns['birthday']))));
             $user->setCountry($columns['country']);
             $user->setTimezone($columns['timezone']);
             $manager->persist($user);

@@ -6,7 +6,6 @@ User:
         email: joe.robles.pdj@gmail.com
         plainpassword: 123abc
         enabled: true
-        birthday: 1980-05-03
         country: PE
         timezone: America/Lima
     enmanuel:
@@ -16,6 +15,5 @@ User:
         email: emiljacobo@gmail.com
         plainpassword: 123abc
         enabled: true
-        birthday: 
         country: VE
         timezone: 
