@@ -64,14 +64,14 @@ class Joke
     /**
      * @var integer
      *
-     * @ORM\Column(name="vote", type="integer")
+     * @ORM\Column(name="vote", type="integer", nullable=true)
      */
     private $vote;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="visit", type="integer")
+     * @ORM\Column(name="visit", type="integer", nullable=true)
      */
     private $visit;
 
@@ -356,6 +356,14 @@ class Joke
     }
     
     /**
+     * 
+     */
+    public function oneVisit()
+    {
+        $this->setVisit($this->getVisit() + 1);
+    }
+
+        /**
      * Defaults when inserting a user
      * 
      * @ORM\PrePersist()

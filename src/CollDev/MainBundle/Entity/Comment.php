@@ -43,9 +43,9 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="text")
+     * @ORM\Column(name="comment", type="text")
      */
-    private $name;
+    private $comment;
 
     /**
      * @var integer
@@ -142,24 +142,24 @@ class Comment
     /**
      * Set name
      *
-     * @param string $name
+     * @param string $comment
      * @return Comment
      */
-    public function setName($name)
+    public function setComment($comment)
     {
-        $this->name = $name;
+        $this->comment = $comment;
     
         return $this;
     }
 
     /**
-     * Get name
+     * Get comment
      *
      * @return string 
      */
-    public function getName()
+    public function getComment()
     {
-        return $this->name;
+        return $this->comment;
     }
 
     /**

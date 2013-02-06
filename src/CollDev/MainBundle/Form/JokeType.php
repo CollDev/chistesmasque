@@ -13,14 +13,11 @@ class JokeType extends AbstractType
         $builder
             ->add('part1')
             ->add('part2')
-            ->add('vote')
-            ->add('visit')
-            ->add('created')
-            ->add('updated')
-            ->add('status')
-            ->add('user')
-            ->add('restriction')
-            ->add('category')
+            ->add('category', 'entity', array(
+                'class' => 'CollDevMainBundle:Category',
+                'property' => 'name',
+                'empty_value' => 'Seleccione',
+            ))
         ;
     }
 

@@ -49,6 +49,12 @@ class JokeController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Joke entity.');
         }
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if ($entity->getUser()->getId() != $user->getId()) {
+            $entity->oneVisit();
+            $em->persist($entity);
+            $em->flush();
+        }
 
         $deleteForm = $this->createDeleteForm($id);
 
@@ -90,6 +96,8 @@ class JokeController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $user = $this->get('security.context')->getToken()->getUser();
+            $entity->setUser($user);
             $em->persist($entity);
             $em->flush();
 

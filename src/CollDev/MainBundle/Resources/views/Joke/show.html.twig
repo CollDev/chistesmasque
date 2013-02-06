@@ -1,10 +1,12 @@
-<h1>Joke</h1>
-
 <table class="record_properties">
     <tbody>
         <tr>
             <th>Id</th>
             <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Categoría</th>
+            <td><a href="{{ path('joke') }}">{{ entity.category.name }}</a></td>
         </tr>
         <tr>
             <th>Part1</th>
@@ -24,25 +26,23 @@
         </tr>
         <tr>
             <th>Created</th>
-            <td>{{ entity.created }}</td>
+            <td>{{ entity.created|date('Y-m-d H:i:s') }}</td>
         </tr>
         <tr>
             <th>Updated</th>
-            <td>{{ entity.updated }}</td>
+            <td>{{ entity.updated|date('Y-m-d H:i:s') }}</td>
         </tr>
+        ̣{% if (app.user.id == entity.user.id) %}
         <tr>
             <th>Status</th>
             <td>{{ entity.status }}</td>
         </tr>
+        {% endif %}
     </tbody>
 </table>
-
+{#% include %#}
+̣{% if (app.user.id == entity.user.id) %}
 <ul class="record_actions">
-    <li>
-        <a href="{{ path('joke') }}">
-            Back to the list
-        </a>
-    </li>
     <li>
         <a href="{{ path('joke_edit', { 'id': entity.id }) }}">
             Edit
@@ -55,3 +55,4 @@
         </form>
     </li>
 </ul>
+{% endif %}
