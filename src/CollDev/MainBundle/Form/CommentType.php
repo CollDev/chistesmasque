@@ -8,17 +8,37 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class CommentType extends AbstractType
 {
+    public $user;
+    public $joke;
+    
+    public function __construct($parameters = array()) {
+        if (isset($parameters['user']) && isset($parameters['joke'])) {
+            $this->user = $parameters['user'];
+            $this->joke = $parameters['joke'];
+        }
+    }
+    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('comment')
-            ->add('likeme')
-            ->add('star')
-            ->add('created')
-            ->add('updated')
-            ->add('status')
-            ->add('user')
-            ->add('joke')
+            ->add('likeme', 'text', array(
+                'required' => false,
+            ))
+            ->add('user', 'entity', array(
+                'class' => 'CollDevMainBundle:User',
+                'property' => 'username',
+                'attr' => array(
+                    'value' => $this->user,
+                )
+            ))
+            ->add('joke', 'entity', array(
+                'class' => 'CollDevMainBundle:Joke',
+                'property' => 'part1',
+                'attr' => array(
+                    'value' => $this->joke,
+                )
+            ))
         ;
     }
 

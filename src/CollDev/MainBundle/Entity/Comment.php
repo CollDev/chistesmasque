@@ -50,16 +50,9 @@ class Comment
     /**
      * @var integer
      *
-     * @ORM\Column(name="likeme", type="smallint")
+     * @ORM\Column(name="likeme", type="smallint", nullable=false)
      */
     private $likeme;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="star", type="smallint")
-     */
-    private $star;
 
     /**
      * @var \DateTime
@@ -183,29 +176,6 @@ class Comment
     public function getLikeme()
     {
         return $this->likeme;
-    }
-
-    /**
-     * Set star
-     *
-     * @param integer $star
-     * @return Comment
-     */
-    public function setStar($star)
-    {
-        $this->star = $star;
-    
-        return $this;
-    }
-
-    /**
-     * Get star
-     *
-     * @return integer 
-     */
-    public function getStar()
-    {
-        return $this->star;
     }
 
     /**

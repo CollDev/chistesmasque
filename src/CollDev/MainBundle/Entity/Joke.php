@@ -44,6 +44,7 @@ class Joke
      * @var integer $comments
      * 
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="joke")
+     * @ORM\OrderBy({"created" = "DESC"})
      */
     private $comments;
 
@@ -67,6 +68,13 @@ class Joke
      * @ORM\Column(name="vote", type="integer", nullable=true)
      */
     private $vote;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="star", type="smallint", nullable=true)
+     */
+    private $star;
 
     /**
      * @var integer
@@ -261,6 +269,29 @@ class Joke
     public function getVote()
     {
         return $this->vote;
+    }
+
+    /**
+     * Set star
+     *
+     * @param integer $star
+     * @return Comment
+     */
+    public function setStar($star)
+    {
+        $this->star = $star;
+    
+        return $this;
+    }
+
+    /**
+     * Get star
+     *
+     * @return integer 
+     */
+    public function getStar()
+    {
+        return $this->star;
     }
 
     /**

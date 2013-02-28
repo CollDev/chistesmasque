@@ -66,8 +66,9 @@ class CommentController extends Controller
      */
     public function newAction()
     {
+        $request = $this->getRequest();
         $entity = new Comment();
-        $form   = $this->createForm(new CommentType(), $entity);
+        $form   = $this->createForm(new CommentType(array('user' => $request->get("user"), 'joke'=> $request->get("joke"))), $entity);
 
         return array(
             'entity' => $entity,
@@ -87,7 +88,6 @@ class CommentController extends Controller
         $entity  = new Comment();
         $form = $this->createForm(new CommentType(), $entity);
         $form->bind($request);
-
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
